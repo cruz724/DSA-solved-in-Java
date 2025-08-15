@@ -97,7 +97,7 @@ If you find an optimization or have a better approach, feel free to create a **p
 ---
 
 ## 📬 Contact
-- **Name:** Laksh
+- **Name:** Shubham Bhandari
 - **GitHub:** [@cruz724](https://github.com/cruz724)
 - **LinkedIn:** [LinkedIn Profile](https://www.linkedin.com/in/shubham724/)
 
