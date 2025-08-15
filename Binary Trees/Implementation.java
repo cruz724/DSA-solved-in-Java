@@ -1,22 +1,22 @@
 import java.util.*;
 
 public class Implementation {
-    static class Node{
+    static class Node {
         int data;
         Node left;
         Node right;
 
-        Node(int data){
+        Node(int data) {
             this.data = data;
             this.left = null;
             this.right = null;
         }
     }
-    
-    static class BinaryTree{
+
+    static class BinaryTree {
         static int idx = -1;
 
-        public static Node buildTree(int nodes[]){
+        public static Node buildTree(int nodes[]) {
             idx++;
             if (nodes[idx] == -1) {
                 return null;
@@ -28,7 +28,7 @@ public class Implementation {
             return newNode;
         }
 
-        public static void preorder(Node root){
+        public static void preorder(Node root) {
             if (root == null) {
                 return;
             }
@@ -37,7 +37,7 @@ public class Implementation {
             preorder(root.right);
         }
 
-        public static void inorder(Node root){
+        public static void inorder(Node root) {
             if (root == null) {
                 return;
             }
@@ -46,7 +46,7 @@ public class Implementation {
             inorder(root.right);
         }
 
-        public static void postorder(Node root){
+        public static void postorder(Node root) {
             if (root == null) {
                 return;
             }
@@ -55,7 +55,7 @@ public class Implementation {
             System.out.print(root.data);
         }
 
-        public static void levelorder(Node root){
+        public static void levelorder(Node root) {
             if (root == null) {
                 return;
             }
@@ -71,10 +71,10 @@ public class Implementation {
                     System.out.println();
                     if (q.isEmpty()) {
                         break;
-                    }else{
+                    } else {
                         q.add(null);
                     }
-                }else{
+                } else {
                     System.out.print(currNode.data + " ");
                     if (currNode.left != null) {
                         q.add(currNode.left);
@@ -86,29 +86,30 @@ public class Implementation {
             }
         }
     }
+
     public static void main(String[] args) {
-        int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
+        int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
 
-        BinaryTree tree = new BinaryTree();
-        Node root = tree.buildTree(nodes);
+        BinaryTree.idx = -1;
 
-        System.out.println(root .data);
+        Node root = BinaryTree.buildTree(nodes);
 
-        System.out.println("Preorder: ");
-        tree.preorder(root);
+        System.out.println(root.data);
+
+        System.out.println("Preorder:");
+        BinaryTree.preorder(root);
         System.out.println();
 
-        System.out.println("inorder: ");
-        tree.inorder(root);
+        System.out.println("Inorder:");
+        BinaryTree.inorder(root);
         System.out.println();
 
-        System.out.println("postorder: ");
-        tree.postorder(root);
+        System.out.println("Postorder:");
+        BinaryTree.postorder(root);
         System.out.println();
 
-        System.out.println("level order: ");
-        tree.levelorder(root);
+        System.out.println("Level order:");
+        BinaryTree.levelorder(root);
 
-        
     }
 }
