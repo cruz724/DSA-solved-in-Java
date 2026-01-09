@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class Build_BST {
 
     static class Node{
@@ -104,11 +104,65 @@ public class Build_BST {
     }
 
     //---------------------------print leaf paths-----------------------------
+    public static void leafPaths(Node root, ArrayList<Integer> path){
+        if (root == null) {
+            return;
+        }
+
+        path.add(root.data);
+
+        if (root.left == null && root.right == null) {
+            printPath(path);
+            path.remove(path.size()-1);
+            return;
+        }
+
+        leafPaths(root.left, path);
+        leafPaths(root.right, path);
+        path.remove(path.size()-1);
+    }
+
+    private static void printPath(ArrayList<Integer> path){
+        for(int i =0; i<path.size(); i++){
+            System.out.print(path.get(i) + "->");
+        }
+        System.out.println("null");
+    }
+
+    //------------------------------Valid BST Check---------------
+    public static boolean isValidBST(Node root, Node min, Node max){
+        if (root ==null) {
+            return true;
+        }
+        if (min != null && min>=root.val) {
+            return false;
+        }else if (max!=null && max<= root.values) {
+            return false;
+        }
+
+        return isValidBST(root.left, min, root) && isValidBST(root.right, root, max);
+    }
+
+
+    //-------------------------mirror BST------------------------------
+    public static Node mirrorBST(Node root){
+        if (root==null) {
+            return null;
+        }
+        Node left = mirrorBST(root.left);
+        Node right = mirrorBST(root.right);
+
+        root.left = right;
+        root.right = left;
+            
+        return root;
+    }
 
     public static void main(String[] args) {
 
         // int values[] = {5,1,3,4,2,7};
-        int values[] = {1,3,4,5,6,8,10,11,14};
+        // int values[] = {1,3,4,5,6,8,10,11,14};
+        int values[]= {8,5,3,6,10,11,14};
         Node root = null;
 
         for (int i = 0; i < values.length; i++) {
@@ -126,5 +180,8 @@ public class Build_BST {
         System.out.println();
 
         printInRange(root,3,11);
+        System.out.println();
+
+        leafPaths(root, new ArrayList<>());
     }
 }
