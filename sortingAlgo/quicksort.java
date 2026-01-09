@@ -1,3 +1,4 @@
+package sortingAlgo;
 public class quicksort {
 
     public static void quicksorts(int arr[], int si, int ei){

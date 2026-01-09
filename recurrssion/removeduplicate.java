@@ -1,3 +1,4 @@
+package recurrssion;
 public class removeduplicate {
 
     public static void duplicate(String str, StringBuilder newstr, int idx, boolean map[]){

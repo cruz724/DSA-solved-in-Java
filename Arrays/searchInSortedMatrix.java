@@ -1,3 +1,4 @@
+package Arrays;
 public class searchInSortedMatrix {
 
     public static boolean staiircasesearch(int matrix[][], int key){

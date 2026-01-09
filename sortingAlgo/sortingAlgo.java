@@ -1,3 +1,4 @@
+package sortingAlgo;
 import java.util.*;
 
 public class sortingAlgo {

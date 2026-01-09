@@ -1,3 +1,4 @@
+package Arrays;
 public class diagonalsum {
 
     public static int diagonal(int matrix[][]){

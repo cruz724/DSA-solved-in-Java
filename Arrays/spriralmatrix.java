@@ -1,3 +1,4 @@
+package Arrays;
 public class spriralmatrix {
 
     public static void printspiral(int matrix[][]){

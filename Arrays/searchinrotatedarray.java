@@ -1,3 +1,4 @@
+package Arrays;
 public class searchinrotatedarray {
 
     public static int search(int arr[], int tar, int si, int ei){
